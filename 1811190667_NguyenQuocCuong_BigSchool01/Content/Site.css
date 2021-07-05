@@ -12,8 +12,15 @@
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
-    white-space: normal;
+.navbar-inverse {
+    background-color:#06f5f0;
+    border-color: #f70625;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: black;
+}
+.navbar-inverse .navbar-brand {
+    color: black;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
