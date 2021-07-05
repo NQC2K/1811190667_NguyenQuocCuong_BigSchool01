@@ -8,7 +8,7 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01
     {
         public void Configuration(IAppBuilder app)
         {
-            //ConfigureAuth(app);
+            ConfigureAuth(app);
         }
     }
 }

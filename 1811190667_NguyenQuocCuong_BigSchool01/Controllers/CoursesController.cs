@@ -16,6 +16,7 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Controllers
             _dbContext = new ApplicationDbContext();
         }
         // GET: Courses
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel
