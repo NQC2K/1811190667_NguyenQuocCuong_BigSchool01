@@ -14,12 +14,13 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Controllers
     public class CoursesController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
+        // GET: Courses
         public CoursesController()
         {
             _dbContext = new ApplicationDbContext();
         }
-        // GET: Courses
         [Authorize]
+
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel
@@ -30,7 +31,7 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Controllers
         }
         [Authorize]
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(CourseViewModel viewModel)
         {
             if (!ModelState.IsValid)
@@ -44,8 +45,8 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Controllers
                 DateTime = viewModel.GetDateTime(),
                 CategoryId = viewModel.Category,
                 Place = viewModel.Place
-            };
 
+            };
             _dbContext.Courses.Add(course);
             _dbContext.SaveChanges();
             return RedirectToAction("Index", "Home");

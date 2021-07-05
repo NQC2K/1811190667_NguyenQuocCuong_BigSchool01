@@ -14,9 +14,7 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Models
         [Required]
         [StringLength(255)]
         public string Place { get; set; }
-        [Required]
         public DateTime DateTime { get; set; }
-        [Required]
         public Category Category { get; set; }
         [Required]
         public byte CategoryId { get; set; }
