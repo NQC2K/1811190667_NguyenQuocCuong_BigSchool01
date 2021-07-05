@@ -13,7 +13,7 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202107050901063_PopulateCategoryTable"; }
+            get { return "202107051001178_PopulateCategoryTable"; }
         }
         
         string IMigrationMetadata.Source

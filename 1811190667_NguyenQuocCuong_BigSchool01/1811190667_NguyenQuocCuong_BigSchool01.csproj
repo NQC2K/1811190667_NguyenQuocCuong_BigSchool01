@@ -46,6 +46,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -130,9 +133,6 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin">
-      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
@@ -174,17 +174,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107050858224_InitialModel.cs" />
-    <Compile Include="Migrations\202107050858224_InitialModel.Designer.cs">
-      <DependentUpon>202107050858224_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202107051000030_InitialModel.cs" />
+    <Compile Include="Migrations\202107051000030_InitialModel.Designer.cs">
+      <DependentUpon>202107051000030_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107050900284_CreateTableCourse.cs" />
-    <Compile Include="Migrations\202107050900284_CreateTableCourse.Designer.cs">
-      <DependentUpon>202107050900284_CreateTableCourse.cs</DependentUpon>
+    <Compile Include="Migrations\202107051001005_CreateTableCourse.cs" />
+    <Compile Include="Migrations\202107051001005_CreateTableCourse.Designer.cs">
+      <DependentUpon>202107051001005_CreateTableCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107050901063_PopulateCategoryTable.cs" />
-    <Compile Include="Migrations\202107050901063_PopulateCategoryTable.Designer.cs">
-      <DependentUpon>202107050901063_PopulateCategoryTable.cs</DependentUpon>
+    <Compile Include="Migrations\202107051001178_PopulateCategoryTable.cs" />
+    <Compile Include="Migrations\202107051001178_PopulateCategoryTable.Designer.cs">
+      <DependentUpon>202107051001178_PopulateCategoryTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -196,6 +196,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\FutureDate.cs" />
+    <Compile Include="ViewModels\ValidTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -272,14 +274,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107050858224_InitialModel.resx">
-      <DependentUpon>202107050858224_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107051000030_InitialModel.resx">
+      <DependentUpon>202107051000030_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107050900284_CreateTableCourse.resx">
-      <DependentUpon>202107050900284_CreateTableCourse.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107051001005_CreateTableCourse.resx">
+      <DependentUpon>202107051001005_CreateTableCourse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107050901063_PopulateCategoryTable.resx">
-      <DependentUpon>202107050901063_PopulateCategoryTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107051001178_PopulateCategoryTable.resx">
+      <DependentUpon>202107051001178_PopulateCategoryTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

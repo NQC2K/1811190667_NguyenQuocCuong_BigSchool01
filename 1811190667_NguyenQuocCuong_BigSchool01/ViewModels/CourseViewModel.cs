@@ -9,15 +9,15 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.ViewModels
 {
     public class CourseViewModel
     {
-        [Required]
+        [Required(ErrorMessage ="Place is required")]
         public string Place { get; set; }
-        [Required]
-        //[FutureDate]
+        [Required(ErrorMessage = "Date is required")]
+        [FutureDate]
         public string Date { get; set; }
-        [Required]
-        //[ValidTime]
+        [Required(ErrorMessage = "Time is required")]
+        [ValidTime]
         public string Time { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Category is required")]
         public byte Category { get; set; }
         public IEnumerable<Category> Categories { get; set; }
         public DateTime GetDateTime()
