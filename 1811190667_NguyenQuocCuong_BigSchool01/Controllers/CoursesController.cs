@@ -116,5 +116,16 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Controllers
             _dbContext.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
+
+        [Authorize]
+        public ActionResult Following()
+        {
+            var userId = User.Identity.GetUserId();
+            var courses = _dbContext.Followings
+                .Where(c => c.FollowerId == userId)
+                .Include(l => l.Followee)
+                .ToList();
+            return View(courses);
+        }
     }
 }
