@@ -22,28 +22,16 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Controllers
         public IHttpActionResult Follow(FollowingDto followingDto)
         {
             var userId = User.Identity.GetUserId();
-            if (_dbContext.Followings.Any(f => f.FollowerId == userId && f.FolloweeId == followingDto.FolloweeId && f.CourseId == followingDto.CourseId))
+            if (_dbContext.Followings.Any(f => f.FollowerId == userId && f.FolloweeId == followingDto.FolloweeId))
                 return BadRequest("Following already exisits");
             var folowing = new Following
             {
                 FollowerId = userId,
-                FolloweeId = followingDto.FolloweeId,
-                CourseId = followingDto.CourseId
+                FolloweeId = followingDto.FolloweeId
             };
             _dbContext.Followings.Add(folowing);
             _dbContext.SaveChanges();
             return Ok();
-        }
-        [HttpDelete]
-        public IHttpActionResult DeleteFollowing(string id, int d)
-        {
-            var userId = User.Identity.GetUserId();
-            var follow = _dbContext.Followings.SingleOrDefault(a => a.FollowerId == userId && a.FolloweeId == id && a.CourseId == d);
-            if (follow == null)
-                return NotFound();
-            _dbContext.Followings.Remove(follow);
-            _dbContext.SaveChanges();
-            return Ok(id);
         }
     }
 }

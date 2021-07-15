@@ -62,7 +62,7 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Controllers
                 .Include(l => l.Lecturer)
                 .Include(l => l.Category)
                 .ToList();
-            var viewModel = new CoursesViewModel
+            var viewModel = new CourseViewModel
             {
                 UpcommingCourses = courses,
                 ShowAction = User.Identity.IsAuthenticated
