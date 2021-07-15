@@ -9,8 +9,6 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.ViewModels
 {
     public class CourseViewModel
     {
-        public IEnumerable<Course> UpcommingCourses { get; set; }
-        public bool ShowAction { get; set; }
         public int Id { get; set; }
         [Required(ErrorMessage = " Place is Required")]
         public string Place { get; set; }
@@ -23,7 +21,6 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.ViewModels
         [Required(ErrorMessage = " Category is Required")]
         public byte Category { get; set; }
         public IEnumerable<Category> Categories { get; set; }
-        public IEnumerable<Attendance> Attendances { get; set; }
         public string Heading { get; set; }
         public string Action
         {

@@ -1,8 +1,7 @@
-﻿@model _1811190667_NguyenQuocCuong_BigSchool01.ViewModels.CourseViewModel
-@{
+﻿@{
     ViewBag.Title = "Home Page";
 }
-<h2>Home Page</h2>
+
 <ul class="course">
     @foreach (var course in Model.UpcommingCourses)
     {
@@ -29,19 +28,7 @@
                 </span>
                 @if (Model.ShowAction)
                 {
-                    var c = 0;
-                    foreach (var item in Model.Attendances)
-                    {
-                        if (item.CourseId == course.Id)
-                        {
-                            c = 1;
-                            <button class="btn btn-info btn-sm js-toggle-attendance" data-course-id="@course.Id">Going</button>
-                        }
-                    }
-                    if (c == 0)
-                    {
-                        <button class="btn btn-default btn-sm js-toggle-attendance" data-course-id="@course.Id">Going?</button>
-                    }
+                    <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
                 }
             </div>
         </li>
@@ -53,30 +40,16 @@
         $(document).ready(function () {
             $(".js-toggle-attendance").click(function (e) {
                 var button = $(e.target);
-                if (button.hasClass("btn-default")) {
-                    $.post("/api/attendances", { courseId: button.attr("data-course-id") })
-                        .done(function () {
-                            button
-                                .removeClass("btn-default")
-                                .addClass("btn-info")
-                                .text("Going");
-                        })
-                        .fail(function () {
-                            alert("Something failed");
-                        });
-                }else {
-                    $.ajax({url: "/api/attendances/" + button.attr("data-course-id"), method: "DELETE"
+                $.post("/api/attendances", { courseId: button.attr("data-course-id") })
+                    .done(function () {
+                        button
+                            .removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Going");
                     })
-                        .done(function () {
-                            button
-                                .removeClass("btn-info")
-                                .addClass("btn-default")
-                                .text("Going?");
-                        })
-                        .fail(function () {
-                            alert("Something failed!");
-                        });
-                }
+                    .fail(function () {
+                        alert("Something failed");
+                    });
             });
             $(".js-toggle-follow").click(function (e) {
                 var button = $(e.target);

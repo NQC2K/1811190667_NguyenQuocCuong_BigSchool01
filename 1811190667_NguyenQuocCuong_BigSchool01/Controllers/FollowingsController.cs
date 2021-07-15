@@ -33,6 +33,5 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Controllers
             _dbContext.SaveChanges();
             return Ok();
         }
-
     }
 }
