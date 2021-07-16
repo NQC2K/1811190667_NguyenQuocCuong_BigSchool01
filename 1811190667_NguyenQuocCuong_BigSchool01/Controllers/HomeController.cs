@@ -27,7 +27,7 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Controllers
             var viewModel = new CourseViewModel
             {
                 UpcommingCourses = upcommingCourses,
-                //Followings = _dbContext.Followings.Where(a => a.FolloweeId == user).ToList(),
+                Followings = _dbContext.Followings.Where(a => a.FolloweeId == user).ToList(),
                 Attendances = _dbContext.Attendances.Where(a => a.AttendeeId == user).ToList(),
                 ShowAction = User.Identity.IsAuthenticated
             };

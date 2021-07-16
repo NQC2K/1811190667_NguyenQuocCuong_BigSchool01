@@ -23,6 +23,7 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.ViewModels
         [Required(ErrorMessage = " Category is Required")]
         public byte Category { get; set; }
         public IEnumerable<Category> Categories { get; set; }
+        public IEnumerable<Following> Followings { get; set; }
         public IEnumerable<Attendance> Attendances { get; set; }
         public string Heading { get; set; }
         public string Action
