@@ -19,7 +19,6 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Controllers
         public ManageController()
         {
         }
-
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
@@ -37,7 +36,6 @@ namespace _1811190667_NguyenQuocCuong_BigSchool01.Controllers
                 _signInManager = value; 
             }
         }
-
         public ApplicationUserManager UserManager
         {
             get
