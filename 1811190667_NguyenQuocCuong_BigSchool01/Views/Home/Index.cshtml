@@ -23,7 +23,6 @@
                         var b = 0;
                         foreach (var item in Model.Followings)
                         {
-
                             if (item.FolloweeId == course.LecturerId)
                             {
 
@@ -94,19 +93,19 @@
                         });
                 }
             });
-            $(".js-toggle-attendance").click(function (e) {
-                var button = $(e.target);
+            $(".js-toggle-attendance").click(function (f) {
+                var button = $(f.target);
                 if (button.hasClass("btn-default")) {
-                $.post("/api/attendances", { courseId: button.attr("data-course-id") })
-                    .done(function () {
-                        button
-                            .removeClass("btn-default")
-                            .addClass("btn-info")
-                            .text("Going");
-                    })
-                    .fail(function () {
-                        alert("Something failed");
-                    });
+                    $.post("/api/attendances", { courseId: button.attr("data-course-id") })
+                        .done(function () {
+                            button
+                                .removeClass("btn-default")
+                                .addClass("btn-info")
+                                .text("Going");
+                        })
+                        .fail(function () {
+                            alert("Something failed");
+                        });
                 } else {
                     $.ajax({url: "/api/attendances/" + button.attr("data-course-id"), method: "DELETE"
                     })
